@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="background">
+
+</div>
+<script>
+    window.onload = draw();
+
+    function fillContent(id,color) {
+        let str = [];
+        for(let i = 0; i < 80; i++){
+            str.push("O");
+        }
+        for(let i = 0; i<60;i++){
+            id.innerHTML = id.textContent + str.join('')+"\n";
+        }
+        id.style.color = color;
+        id.style.fontSize = "8px";
+    }
+
+    function draw() {
+
+        let background = document.getElementById("background");
+        let white = document.createElement("div");
+
+        fillContent(white,"white");
+        let blue = document.createElement("div");
+        fillContent(blue,"blue");
+        let red = document.createElement("div");
+        fillContent(red,"red");
+
+        background.append(white);
+        background.append(blue);
+        background.append(red);
+    }
+</script>
+</body>
+</html>
